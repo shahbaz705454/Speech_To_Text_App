@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+   
+    
+}
+
+:root {
+    --color-primary: #9090f1;
+    --wave-bg-color: #f7f4f4f1;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    background-color: var(--color-primary);
+}
+
+  
+
+
+
+
+.wrapper {
+
+    gap: 20px;
+    width: 100vw;
+    min-height: 100vh;
+    padding: 33px 44px;
+    background-color: var(--color-primary);
+    border-radius: 6px;
+    flex-direction: column;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.22);
+}
+.heading{
+    margin-bottom: 3rem;
+    font-size: 4rem;
+}
+
+
+.wave-area {
+    top: 30px;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0px 2px 4px #cccccc;
+    background-color: rgb(10, 10, 10);
+    box-shadow: 5px 10px 10px #6565db;
+}
+.wave-area:hover{
+    scale: 1.1;
+    transition: all 0.2s ease-in-out;
+}
+
+.wave-area img {
+    width: 44px;
+    height: 44px;
+    
+}
+
+.wave-area.active img {
+    animation: blink 1s linear infinite;
+}
+
+.wave-area.active::before {
+    animation: wave-1 1s linear infinite;
+}
+
+.wave-area.active::after,
+.wave-area.active::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    border: 4px solid white;
+}
+
+.wave-area.active::after {
+    animation: wave-2 1s linear infinite;
+}
+
+.words {
+    
+    border-radius: 46px;
+    background: linear-gradient(145deg, #7160cb, #8772f1);
+    box-shadow: 39px 39px 78px #4d4189,
+        -39px -39px 78px #af95ff;
+
+
+    padding: 30px 20px;
+    height: 50vh;
+    width: 30vw;
+    font-size: 2rem;
+    /* font-weight: 700; */
+    margin-top: 22px;
+    color: #251b4d;
+    /* font: bold; */
+   
+
+}
+
+body,
+.wrapper,
+.wave-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes wave-1 {
+    0% {
+        opacity: 1;
+        transform: scale(0.2);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+}
+
+@keyframes wave-2 {
+    0% {
+        opacity: 1;
+        transform: scale(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+}
